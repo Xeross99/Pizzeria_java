@@ -1,0 +1,3 @@
+# Ignorowanie plików kompilacyjnych
+**/bin/*
+receipt.txt

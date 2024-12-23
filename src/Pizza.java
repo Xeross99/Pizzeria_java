@@ -3,17 +3,23 @@ import java.util.List;
 public class Pizza {
     private final List<String> ingredients;
     private final int price;
+    private final int size;
 
-    public Pizza(List<String> ingredients, int price) {
+    public Pizza(List<String> ingredients, int price, int size) {
         this.ingredients = ingredients;
         this.price = price;
+        this.size = size;
     }
 
     public int GetPrice() {
-        return price;
+        return this.price;
     }
 
-    public List<String> GetListOfIngredients() {
-        return ingredients;
+    public int GetSize() {
+        return this.size;
     }
+
+    public List<String> getIngredients() {
+        return this.ingredients;
+    }    
 }
