@@ -41,9 +41,9 @@ public enum PizzaPreset {
 
     public int getPrice(PizzaSize size) {
         return switch (size) {
-            case SMALL -> smallPrice;
+            case SMALL  -> smallPrice;
             case MEDIUM -> mediumPrice;
-            case LARGE -> largePrice;
+            case LARGE  -> largePrice;
         };
     }
 }

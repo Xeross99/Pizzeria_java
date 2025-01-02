@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -10,7 +11,18 @@ public class ReceiptPrinter {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDate = now.format(formatter);
 
-        String fileName = "receipt.txt";
+        String folderPath = "receipts";
+        File folder = new File(folderPath);
+
+        if (!folder.exists()) {
+            boolean created = folder.mkdirs();
+            if (!created) {
+                System.out.println("Nie udało się utworzyć folderu na rachunki.");
+                return;
+            }
+        }
+
+        String fileName = folderPath + File.separator + "receipt_" + formattedDate + ".txt";
 
         StringBuilder receipt = new StringBuilder();
         receipt.append("============== Rachunek ==============\n");
